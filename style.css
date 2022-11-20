@@ -1,0 +1,202 @@
+:root {
+  /* primary */
+  --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+
+  /* neutral */
+  --Pale-Blue: hsl(243, 100%, 93%);
+  --Grayish-Blue: hsl(229, 7%, 55%);
+  --Dark-Blue: hsl(228, 56%, 26%);
+  --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*small*/
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* start main  */
+main {
+  display: flex;
+  background: url(bg-desktop.png);
+  background-repeat: no-repeat;
+  background-color: var(--Very-Dark-Blue);
+  background-position: bottom;
+  background-size: contain;
+  height: 100vh;
+}
+@media (max-width: 767px) {
+  main {
+    background-image: url(bg-mobile.png);
+    background-size: cover;
+  }
+}
+main .container {
+  /* display: grid; */
+  /* min-height: 100vh; */
+  /* place-content: center; */
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  main .container {
+    flex-direction: column;
+  }
+}
+main .container .box {
+  background-color: var(--Dark-Blue);
+}
+main .container .one {
+  /* padding: 15px 50px 25px; */
+  padding: 25px 70px 25px 20px;
+  border-radius: 7px;
+  border-top-right-radius: 60px;
+}
+main .container .one .icons {
+  margin-top: 10px;
+}
+main .container .one .icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+main .container .box .logo {
+  width: 73px;
+}
+main .container .one .icons .img {
+  padding: 6px 7px;
+  border-radius: 5px;
+  background-color: var(--Very-Dark-Blue);
+}
+main .container .one .icons .img > img {
+  width: 15px;
+}
+main .container .one .icons .img > img.rar {
+  width: 13px;
+}
+main .container .two {
+  padding: 15px 20px;
+  border-radius: 10px;
+  color: white;
+  width: 50%;
+  position: relative;
+}
+main .container .two .result {
+  position: absolute;
+  background-color: white;
+  color: black;
+  right: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  top: -20px;
+}
+main .container .two .result::before {
+  content: "";
+  position: absolute;
+  bottom: -11px;
+  right: 0;
+  width: 0px;
+  height: 0px;
+  border-width: 11px;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+}
+@media (max-width: 767px) {
+  main .container .two .result {
+    /*position: absolute;
+    background-color: white;
+    color: black;
+    /* right: 50%; */
+    /* left: 50%;
+    bottom: -20px;
+    transform: translate(-50%);
+    padding: 5px;
+    border-radius: 5px; */
+    top: inherit;
+    /* right: 0; */
+    left: 50%;
+    transform: translate(-50%);
+    bottom: -20px;
+  }
+}
+main .container .two .result p {
+  color: var(--Grayish-Blue);
+}
+main .container .two .result span {
+  font-size: 1.5rem;
+  color: black;
+}
+main .container .two .div {
+  display: flex;
+  justify-content: space-between;
+}
+main .container .two .prog {
+  border-radius: 10px;
+  margin: 12px 0;
+  background-color: var(--Very-Dark-Blue);
+}
+main .container .two .prog .progress {
+  height: 12px;
+  width: 75%;
+  border-radius: 10px;
+  background: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+}
+main .container .two .prog .progress .cricle {
+  width: 10px;
+  height: 100%;
+  background-color: white;
+  float: right;
+  border-radius: 10px;
+}
+@media (max-width: 767px) {
+  main .container .one,
+  main .container .two {
+    width: 100%;
+  }
+  main .container .two .result::before {
+    display: none;
+  }
+}
+/* end main  */
